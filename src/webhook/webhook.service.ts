@@ -73,6 +73,23 @@ export class WebhookService {
     return this.getItems();
   }
 
+  async findOne(modelData) {
+    return new Promise((resolve, reject) => {
+      return this.getItems().then((res) => {
+        let foundEntity = null;
+        res['items'].map((item) => {
+          if(item['callback_url'] === modelData['callback_url']) {
+            foundEntity = item;
+          }
+        });
+        if(foundEntity) {
+          return resolve(foundEntity);
+        }
+        reject(new Error(`entity with callback_url "${modelData['callback_url']}" not found`));
+      });
+    });
+  }
+
   protected lockedBy = null;
   protected static LOCKED_BY_WEBHOOK_SERVICE = -1;
 

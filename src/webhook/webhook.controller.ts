@@ -4,10 +4,12 @@ import {
   Controller,
   Get,
   Post,
-  Delete, Put
+  Delete,
+  Put,
+  Query, Param
 } from '@nestjs/common';
 import {WebhookService} from "./webhook.service";
-
+import * as querystring from "querystring";
 
 @Controller('webhook')
 export class WebhookController {
@@ -34,7 +36,19 @@ export class WebhookController {
 
   @Get()
   async getAllWebhooks(): Promise<any> {
-    return this.webhookService.findAll();
+    return this.webhookService.findAll().catch((err) => {
+      throw new BadRequestException(err.message);
+    });
+  }
+
+  @Get(':callback_url')
+  async getWebhook(@Param('callback_url') callback_url): Promise<any> {
+    const modelData = { callback_url: querystring.unescape(callback_url) };
+    WebhookController.callbackUrlIsPassed(modelData);
+
+    return this.webhookService.findOne(modelData).catch((err) => {
+      throw new BadRequestException(err.message);
+    });
   }
 
   @Post()
