@@ -1,11 +1,10 @@
 {
-  "name": "api",
+  "name": "cis-api",
   "version": "0.0.2",
-  "description": "nestjs-auth-postgres",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
-  "repository": "https://git.trinitypro.ru/trinity/api",
+  "description": "Nest Webhook API repository",
+  "license": "MIT",
+  "author": "Alexander Serditov",
+  "repository": "https://github.com/dguard/cis-webhook-api",
   "scripts": {
     "parse": "node -r dotenv/config parser/",
     "format": "prettier --write \"**/*.ts\"",
