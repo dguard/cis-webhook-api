@@ -41,9 +41,8 @@ export class WebhookController {
     });
   }
 
-  @Get(':callback_url')
-  async getWebhook(@Param('callback_url') callback_url): Promise<any> {
-    const modelData = { callback_url: querystring.unescape(callback_url) };
+  @Post('retrieve')
+  async getWebhook(@Body() modelData: { callback_url: string }): Promise<any> {
     WebhookController.callbackUrlIsPassed(modelData);
 
     return this.webhookService.findOne(modelData).catch((err) => {
