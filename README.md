@@ -29,21 +29,18 @@
 
 [DEMO](https://api.webhook.cis.digitallyconstructed.ru/webhook/) (api adds webhook host)
 
-### CIS
+| Service | Repo |
+| --- | --- |
+| API 📦 | [cis-api](https://github.com/dguard/cis-api) |
+| Frontend 📦 | [cis-front](https://github.com/dguard/cis-front) |
+| Worker 📦 | [cis-worker](https://github.com/dguard/cis-worker) |
+|  📦 |  |
+| Webhook API 🐍| cis-webhook-api (you are inside) |
+| Webhook Worker 🐍| [cis-webhook-worker](https://github.com/dguard/cis-webhook-worker) |
+| Consumer Webhook 🐍| [cis-consumer-webhook](https://github.com/dguard/cis-consumer-webhook) |
+|  📦 |  |
+| Graphql API 🐍| [cis-graphql-api](https://github.com/dguard/cis-graphql-api) |
 
-[API](https://github.com/dguard/cis-api)
-
-[Frontend](https://github.com/dguard/cis-front)
-
-[Worker](https://github.com/dguard/cis-worker)
-
-### \>CIS Webhook
-
-\>Webhook API
-
-[Webhook Worker](https://github.com/dguard/cis-webhook-worker)
-
-[Consumer Webhook](https://github.com/dguard/cis-consumer-webhook)
 
 ## Installation
 
